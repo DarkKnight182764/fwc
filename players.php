@@ -12,7 +12,8 @@
     <body ng-app="root">
         <?php
             session_start();
-            echo "current-user:".$_SESSION['username'];
+            if(COUNT($_SESSION)!=0)
+                echo "current-user:".$_SESSION['username'];
         ?>        
         <display-table tablename="'player'"></display-table>              
     </body>
