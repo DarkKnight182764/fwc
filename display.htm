@@ -1,4 +1,5 @@
-<div>            
+<div>         
+    {{test}}
     <table>   
         <tr>
             <th ng-repeat="x in header">    
@@ -6,8 +7,13 @@
             </th>
         </tr>         
         <tr ng-repeat="row in allRows">
-            <td ng-repeat="val in row" >
-                <img src="{{val}}" alt="{{val}}">
+            <td ng-repeat="val in row track by $index">                                
+                <div ng-if="isImg(val)">                    
+                    <img src="{{val}}" alt="{{val}}">
+                </div>
+                <div ng-if="!isImg(val)">                    
+                    {{val}}
+                </div>                
             </td>
         </tr>
     </table>

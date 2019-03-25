@@ -1,4 +1,4 @@
-<?php    
+<?php
     class ret{
         public $fields;
         public $allRows;
@@ -15,15 +15,14 @@
         echo "php:error";
         die();
     }            
-    $rec=json_decode(file_get_contents("php://input"));
-    //var_dump($rec);    
-    $q=("SELECT * FROM ".$rec->tablename);
+    $rec->json_decode(file_get_contents("php://input"));
+    $q=$rec->query;
     if($conn->query("USE fwc")){
         if($res=$conn->query($q)){
             echo json_encode(new ret($res->fetch_fields(),$res->fetch_all()));
-            flush();
-            die();
-        }
-    }        
+            flush();            
+            exit();
+        }        
+    }
     echo "php:error";
 ?>

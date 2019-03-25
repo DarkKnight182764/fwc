@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
     <script>
@@ -11,7 +12,7 @@
                 if(createAcc){
                     console.log("Creating new account");
                     if($scope.cAPassword==$scope.cARepeatPassword){
-                        $http({
+                        $http({  
                             url:"php/insert.php",
                             method:"POST",
                             data:JSON.stringify({query:"INSERT INTO user(username,password) VALUES ('"+$scope.cAUsername+
@@ -50,7 +51,6 @@
                         
                     });
                 }
-                console.log(typeof($scope.res));                
             }
         });
     </script>

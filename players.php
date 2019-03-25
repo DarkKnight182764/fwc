@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
     <head>        
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>                   
         <link rel="stylesheet" type="text/css" href="css/tablestyle.css">
-        <script src="js/display.js"></script>          
+        <script>
+            angular.module("root",[]);
+        </script>        
+        <script src="js/display_table.js"></script>          
     </head>
-    <body>
+    <body ng-app="root">
         <?php
             session_start();
             echo "current-user:".$_SESSION['username'];
-        ?>
-        <div ng-app="display" ng-controller="displayController" ng-init="display('player')">    
-            <div ng-include="'display.htm'"></div>        
-        </div>
+        ?>        
+        <display-table tablename="'player'"></display-table>              
     </body>
 </html> 
