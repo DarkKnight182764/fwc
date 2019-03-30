@@ -1,19 +1,16 @@
-<div>             
-    <table>   
-        <tr>
-            <th ng-repeat="x in header">    
-                {{x.name}}
-            </th>
-        </tr>         
-        <tr ng-repeat="row in allRows">
-            <td ng-repeat="val in row track by $index">                                
-                <div ng-if="isImg(val)">                    
-                    <img src="{{val}}" alt="{{val}}">
-                </div>
-                <div ng-if="!isImg(val)">                    
-                    {{val}}
-                </div>                
-            </td>
-        </tr>
-    </table>
+<div class="container">
+    <div class="row" style="margin-top: 5em">
+        <div class="col-sm-2" ng-repeat="row in data">
+            <div class="card border-gradient border-gradient-gold" style="width: 10rem;text-align: center;">                
+                <img src="{{row.p_img}}" class="card-img-top">
+                <!--<img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/por" style="max-width:100px;"
+                    class="team-logo">-->
+            </div>
+            <div style="margin-top:2em;text-align: center;">
+                <h3>{{row.pname}}</h3>
+                <!--<h5>Portugal</h5>-->
+                <p>{{row.type}}</p>
+            </div>
+        </div>
+    </div>
 </div>
