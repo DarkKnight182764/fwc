@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Players</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>        
+        .card-img-top {
+            border-radius: 0;
+        }
+
+        .border-gradient {
+            border-image-slice: 1;
+            border-width: 5px;
+        }
+
+        .border-gradient-gold {
+            border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
+        }
+
+        .team-logo {
+            position: absolute;
+            transform: translate(27px, 125px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:3em;margin-bottom:3em">
+        <h1 class="display-4">Players</h1>
+    </div>
+
+    <div class="container">
+        <div class="row" style="margin-top: 5em">
+            <div class="col-sm-2">
+                <div class="card border-gradient border-gradient-gold" style="width: 10rem;text-align: center;">
+                    <img src="https://api.fifa.com/api/v1/picture/players/2018fwc/201200_sq-300_jpg?allowDefaultPicture=true"
+                        class="card-img-top" alt="Ronaldo">
+                    <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/por" style="max-width:100px;"
+                        class="team-logo">
+
+                </div>
+                <div style="margin-top:2em;text-align: center;">
+                    <h3>Ronaldo</h3>
+                    <h5>Portugal</h5>
+                    <p>Forward</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

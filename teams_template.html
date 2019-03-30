@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teams</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .card-img-top{
+            border-radius:0;
+        }
+        .border-gradient {
+            border-image-slice: 1;
+            border-width: 5px;
+        }
+
+        .border-gradient-gold {
+            border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
+        }
+
+        .team-logo{
+            position : absolute;
+            transform: translate(50px, 100px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" style="margin-top:3em;margin-bottom:3em;">
+        <h1 class="display-4">Teams</h1>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-top:2em;">
+            <div class="col-sm-3">
+                <div class="wrapper">
+                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                        <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                            alt="Argentina">
+                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                        <div class="card-body"
+                            style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                            <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="wrapper">
+                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                        <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                            alt="Australia">
+                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                        <div class="card-body"
+                            style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                            <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="wrapper">
+                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                        <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                            alt="Belgium">
+                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                        <div class="card-body"
+                            style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                            <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="wrapper">
+                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                        <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                            alt="Brazil">
+                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                        <div class="card-body"
+                            style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                            <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top:2em;">
+                <div class="col-sm-3">
+                    <div class="wrapper">
+                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                            <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                                alt="Argentina">
+                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                            <div class="card-body"
+                                style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                                <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="wrapper">
+                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                            <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                                alt="Australia">
+                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                            <div class="card-body"
+                                style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                                <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="wrapper">
+                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                            <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                                alt="Belgium">
+                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                            <div class="card-body"
+                                style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                                <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3">
+                    <div class="wrapper">
+                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                            <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                                alt="Brazil">
+                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                            <div class="card-body"
+                                style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                                <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row" style="margin-top:2em;">
+                    <div class="col-sm-3">
+                        <div class="wrapper">
+                            <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                                <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                                    alt="Argentina">
+                                    <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                                <div class="card-body"
+                                    style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                                    <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-3">
+                        <div class="wrapper">
+                            <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                                    alt="Australia">
+                                    <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                                <div class="card-body"
+                                    style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                                    <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-3">
+                        <div class="wrapper">
+                            <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                                    alt="Belgium">
+                                    <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                                <div class="card-body"
+                                    style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                                    <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-3">
+                        <div class="wrapper">
+                            <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                                    alt="Brazil">
+                                    <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                                <div class="card-body"
+                                    style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                                    <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row" style="margin-top:2em;">
+                        <div class="col-sm-3">
+                            <div class="wrapper">
+                                <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                                    <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                                        alt="Argentina">
+                                        <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                                    <div class="card-body"
+                                        style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                                        <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-sm-3">
+                            <div class="wrapper">
+                                <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                    <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                                        alt="Australia">
+                                        <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                                    <div class="card-body"
+                                        style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                                        <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-sm-3">
+                            <div class="wrapper">
+                                <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                    <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                                        alt="Belgium">
+                                        <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                                    <div class="card-body"
+                                        style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                                        <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="col-sm-3">
+                            <div class="wrapper">
+                                <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                    <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                                        alt="Brazil">
+                                        <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                                    <div class="card-body"
+                                        style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                                        <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="row" style="margin-top:2em;">
+                            <div class="col-sm-3">
+                                <div class="wrapper">
+                                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                                        <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                                            alt="Argentina">
+                                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                                        <div class="card-body"
+                                            style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                                            <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-sm-3">
+                                <div class="wrapper">
+                                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                        <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                                            alt="Australia">
+                                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                                        <div class="card-body"
+                                            style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                                            <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-sm-3">
+                                <div class="wrapper">
+                                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                        <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                                            alt="Belgium">
+                                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                                        <div class="card-body"
+                                            style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                                            <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="col-sm-3">
+                                <div class="wrapper">
+                                    <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                        <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                                            alt="Brazil">
+                                            <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                                        <div class="card-body"
+                                            style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                                            <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="row" style="margin-top:2em;">
+                                <div class="col-sm-3">
+                                    <div class="wrapper">
+                                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">
+                                            <img src="https://img.fifa.com/image/upload/t_l5/d7ot8rmxt0gu6dafbpuj.jpg" class="card-img-top"
+                                                alt="Argentina">
+                                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/arg" style="max-width:150px;" class="team-logo">
+                                            <div class="card-body"
+                                                style="background-color: #84b0dc;padding-top: 60px;padding-bottom: 60px">
+                                                <h3 class="card-text" style="text-align: center;color:white">Argentina</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-sm-3">
+                                    <div class="wrapper">
+                                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                            <img src="https://img.fifa.com/image/upload/t_l5/fwdiikpq4n0bze7db4za.jpg" class="card-img-top"
+                                                alt="Australia">
+                                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/aus" style="max-width:150px;" class="team-logo">
+                                            <div class="card-body"
+                                                style="background-color:  #004d00;padding-top: 60px;padding-bottom: 60px">
+                                                <h3 class="card-text" style="text-align: center;color:white">Australia</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-sm-3">
+                                    <div class="wrapper">
+                                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                            <img src="https://img.fifa.com/image/upload/t_l5/gxravwtucnoe7yag3fxz.jpg" class="card-img-top"
+                                                alt="Belgium">
+                                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bel" style="max-width:150px;" class="team-logo">
+                                            <div class="card-body"
+                                                style="background-color: #cc0000;padding-top: 60px;padding-bottom: 60px">
+                                                <h3 class="card-text" style="text-align: center;color:white">Belgium</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-sm-3">
+                                    <div class="wrapper">
+                                        <div class="card border-gradient border-gradient-gold" style="width: 16rem;">
+                                            <img src="https://img.fifa.com/image/upload/t_l5/hddlumpc8wrpddz9crcx.jpg" class="card-img-top"
+                                                alt="Brazil">
+                                                <img src="https://api.fifa.com/api/v1/picture/flags-fwc2018-4/bra" style="max-width:150px;" class="team-logo">
+                                            <div class="card-body"
+                                                style="background-color: #000099;padding-top: 60px;padding-bottom: 60px">
+                                                <h3 class="card-text" style="text-align: center;color:white">Brazil</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+        
+
+
+    </div>
+
+
+    
+
+</body>
+
+</html>
