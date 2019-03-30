@@ -1,10 +1,10 @@
 <?php    
     class ret{
         public $fields;
-        public $allRows;
+        public $allRows;        
         function __construct($f,$ar){            
             $this->fields=$f;
-            $this->allRows=$ar;
+            $this->allRows=$ar;            
         }
     }
     $servername="localhost";
