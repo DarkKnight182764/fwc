@@ -1,19 +1,14 @@
 angular.module("root").
-    directive("displayQuery",["$http",function($http){
+    directive("displayUpdateScore",["$http",function($http){
         return {
-            templateUrl:function(elem,attr){                  
-                if(attr.type==="players")
-                    return "display.htm";
-                else if(attr.type==="match")
-                    return "display_match.htm"                
-            },
+            templateUrl:"display_update_score.htm",
             scope:{
                 query:"=query"                
             },
             link:function(scope){   
                 scope.$watch("query",function(newVal,oldVal){
-                    console.log(JSON.stringify(scope.query));  
-                    console.log(typeof(scope.query));
+                    //console.log(JSON.stringify(scope.query));  
+                    //console.log(typeof(scope.query));
                     $http({
                         url:"php/display_query.php",
                         method:"POST",
@@ -26,7 +21,15 @@ angular.module("root").
                     },function(reject){
                         console.log("err"+JSON.stringify(reject));
                     });                                    
-                });                
+                });  
+                scope.submit=function(mid){
+                    //console.log(mid);
+                    $http({
+                        url:"php/insert.php",
+                        method:"POST",
+                        data:JSON.stringify({query:""})
+                    });
+                }              
                 scope.init=function(){
                     addRow=function(str,rownum){
                         for(var i=0;i<scope.allRows[rownum].length;i++){
@@ -46,7 +49,7 @@ angular.module("root").
                             str+=",";
                     }
                     str+="]";
-                    console.log(str);
+                    //console.log(str);
                     scope.data=JSON.parse(str);                    
                 }   
             }

@@ -11,8 +11,10 @@
         die();
     }
     $ip=json_decode(file_get_contents("php://input"));
-    session_start();
-    $_SESSION["username"]=$ip->username;    
+    if(isset($ip->username)){
+        session_start();
+        $_SESSION["username"]=$ip->username;    
+    }
     $q="USE fwc;";
     $q.=$ip->query.";";
     //echo $q;

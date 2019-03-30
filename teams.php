@@ -29,6 +29,6 @@
 <body ng-app="root" ng-controller="ctrl">            
     {{query}}
     <display-team tablename="'team'" teamname="teamname"></display-team>   
-    <display-query query="query"></display-query>    
+    <display-query query="query" type="players"></display-query>    
 </body>
 </html>

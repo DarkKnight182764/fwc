@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script>
+            var app=angular.module("root",[]);
+            app.controller("ctrl",["$scope",function($scope){
+               $scope.getString=function(date){
+                   return (date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());
+               }
+               $scope.inc=86400000;
+               $scope.date=new Date(2019,0,1);  //1st jan 2019
+               $scope.dates=[];
+               for(var i=0;i<100;i++){
+                   var temp=new Date($scope.date.getTime()+i*$scope.inc);
+                    $scope.dates[i]=$scope.getString(temp);
+                }
+                //console.log(JSON.stringify($scope.dates));               
+                $scope.update=function(tempdate){
+                    $scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"';";                
+                }
+            }]);
+        </script>
+        <script src="js/display_query.js"></script>
+        <link rel="stylesheet" href="css/matches.css">
+    </head>
+    <body>
+        <div ng-app ="root" ng-controller="ctrl">
+            <div ng-repeat="tempdate in dates">
+                {{update(tempdate)}}                                             
+                <display-query query="query" type="match"></display-query>
+            </div>
+        </div>
+    </body>
+</html>

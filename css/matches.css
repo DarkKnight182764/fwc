@@ -1,0 +1,16 @@
+.matdet {
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    
+}
+.matdet img{
+    margin-right: 5px;
+    margin-left: 5px;
+}

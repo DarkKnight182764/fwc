@@ -1,0 +1,11 @@
+CREATE VIEW fmatch_view AS
+	SELECT  (SELECT tname FROM team WHERE team.tid=fm.t1_id) AS 't1name',
+            (SELECT t_logo FROM team WHERE team.tid=fm.t1_id) AS 't1logo',
+            (SELECT tname FROM team WHERE team.tid=fm.t2_id) AS 't2name',
+            (SELECT t_logo FROM team WHERE team.tid=fm.t2_id) AS 't2logo',
+            (SELECT COUNT(*) FROM goal NATURAL JOIN fmatch WHERE mid=fm.mid AND EXISTS(SELECT * FROM team NATURAL JOIN player WHERE tid=fm.t1_id AND pid=goal.pid)) AS 't1score',
+            (SELECT COUNT(*) FROM goal NATURAL JOIN fmatch WHERE mid=fm.mid AND EXISTS(SELECT * FROM team NATURAL JOIN player WHERE tid=fm.t2_id AND pid=goal.pid)) AS t2score,
+            fm.start_date,
+            (SELECT stad_name FROM stadium NATURAL JOIN fmatch WHERE mid=fm.mid) as stadium,
+            fm.mid
+            	FROM fmatch fm
