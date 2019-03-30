@@ -1,8 +1,6 @@
-.card-img-top {
-    border-radius: 0;
-    
+.card-img-top{
+    border-radius:0;
 }
-
 .border-gradient {
     border-image-slice: 1;
     border-width: 5px;
@@ -12,7 +10,7 @@
     border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
 }
 
-.team-logo {
-    position: absolute;
-    transform: translate(27px, 125px);
+.team-logo{
+    position : absolute;
+    transform: translate(50px, 100px);
 }

@@ -7,13 +7,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/tablestyle.css">
     <link rel="stylesheet" type="text/css" href="css/players.css">
+    <link rel="stylesheet" type="text/css" href="css/teams.css">
     <script>
         var app=angular.module("root",[]);
         app.controller("ctrl",["$scope",function($scope){
-            $scope.query=$scope.teamname="";                        
+            $scope.query=$scope.teamname="";                                    
             $scope.$watch("teamname",function(newVal,oldVal){
-                if($scope.teamname.localeCompare("")!=0)
-                    $scope.query="SELECT * FROM players_teams WHERE tname='"+$scope.teamname+"'";
+                if($scope.teamname!=="")
+                    $scope.query="SELECT * FROM players_view WHERE tname='"+$scope.teamname+"'";
             });         
         }])
     </script>        
@@ -28,6 +29,6 @@
 <body ng-app="root" ng-controller="ctrl">            
     {{query}}
     <display-team tablename="'team'" teamname="teamname"></display-team>   
-    <display-query query="query"></display-query>
+    <display-query query="query"></display-query>    
 </body>
 </html>

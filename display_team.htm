@@ -1,19 +1,17 @@
-<div>                 
-    <table>   
-        <tr>
-            <th ng-repeat="x in header">    
-                {{x.name}}
-            </th>
-        </tr>         
-        <tr ng-repeat="row in allRows" ng-click="click($index)">
-            <td ng-repeat="val in row track by $index">                                
-                <div ng-if="isImg(val)">                    
-                    <img src="{{val}}" alt="{{val}}">
+<div class="container">
+    <div class="row" style="margin-top:2em;">
+        <div class="col-sm-3" ng-repeat="row in data">
+            <div class="wrapper" ng-click="click($index)">
+                <div class="card border-gradient border-gradient-gold" style="width: 16rem;text-align: center;">                    
+                    <img src="{{row.t_img}}" class="card-img-top"
+                            alt="Australia">
+                    <img src="{{row.t_logo}}" style="max-width:150px;" class="team-logo">
+                    <div class="card-body"
+                        style="background-color: {{row.tcolor}} ;padding-top: 60px; padding-bottom: 60px">
+                        <h3 class="card-text" style="text-align: center;color:white">{{row.tname}}</h3>
+                    </div>
                 </div>
-                <div ng-if="!isImg(val)">                    
-                    {{val}}
-                </div>                
-            </td>
-        </tr>
-    </table>
-</div>
+            </div>
+        </div>
+    </div>
+</div>        
