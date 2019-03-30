@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/tablestyle.css">
+        <link rel="stylesheet" type="text/css" href="css/players.css">
         <script>
             angular.module("root",[]);
         </script>        
@@ -17,6 +18,6 @@
             if(COUNT($_SESSION)!=0)
                 echo "current-user:".$_SESSION['username'];
         ?>        
-        <display-table tablename="'player'"></display-table>              
+        <display-table tablename="'players_view'"></display-table>              
     </body>
 </html> 
