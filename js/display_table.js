@@ -16,13 +16,7 @@ angular.module("root").
                     scope.header=response.data.fields;  
                     scope.init();                   
                     //console.log(JSON.stringify(scope.assoc));                    
-                });                                    
-                scope.isImg=function(str){
-                    if(str.indexOf("/")!=-1)
-                        return true;
-                    else    
-                        return false;
-                }   
+                });                                                      
                 scope.init=function(){
                     addRow=function(str,rownum){
                         for(var i=0;i<scope.allRows[rownum].length;i++){

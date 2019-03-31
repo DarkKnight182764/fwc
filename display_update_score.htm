@@ -24,17 +24,17 @@
                         <!--Country 2-->
                     </li>
                 </ul>
-                <ul ng-if="show">
+                <ul ng-if="show">                    
                     <li>    
-                        <input type="text" placeholder="Enter name of player" ng-bind="playername">
+                        <input type="text" placeholder="Enter name of player" ng-model="playername[$index]">
                     </li>
                     <li>
-                        <input type="text" placeholder="Enter when he scored" ng-bind="scoreTime">
+                        <input type="text" placeholder="Enter when he scored" ng-model="scoreTime[$index]">
                     </li>                    
                 </ul>
                 <ul ng-if="show">
                     <li>    
-                        <input type="submit" value="Submit" ng-click="submit(row.mid)">
+                        <input type="submit" value="Submit" ng-click="submit(row.mid,$index)">
                     </li>                    
                 </ul>
             </div>            

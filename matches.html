@@ -19,7 +19,7 @@
                     $scope.dates[i]=$scope.getString(temp);
                 }
                 //console.log(JSON.stringify($scope.dates));               
-                $scope.update=function(tempdate){
+                $scope.updateQuery=function(tempdate){
                     $scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"';";                
                 }
             }]);
@@ -30,7 +30,7 @@
     <body>
         <div ng-app ="root" ng-controller="ctrl">
             <div ng-repeat="tempdate in dates">
-                {{update(tempdate)}}                                             
+                {{updateQuery(tempdate)}}                                             
                 <display-query query="query" type="match"></display-query>
             </div>
         </div>

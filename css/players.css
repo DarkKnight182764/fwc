@@ -14,5 +14,6 @@
 
 .team-logo {
     position: absolute;
-    transform: translate(27px, 125px);
+    transform: translate(27px, 75px);
+    height:50%;
 }

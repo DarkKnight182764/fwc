@@ -10,7 +10,7 @@
     border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
 }
 
-.team-logo{
+.team-logo-teams{
     position : absolute;
     transform: translate(50px, 100px);
 }

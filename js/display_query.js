@@ -11,9 +11,11 @@ angular.module("root").
                 query:"=query"                
             },
             link:function(scope){   
-                scope.$watch("query",function(newVal,oldVal){
-                    console.log(JSON.stringify(scope.query));  
-                    console.log(typeof(scope.query));
+                console.log("link");
+                function temp(newVal,oldVal){
+                    console.log("http");
+                    //console.log(JSON.stringify(scope.query));  
+                    //console.log(typeof(scope.query));
                     $http({
                         url:"php/display_query.php",
                         method:"POST",
@@ -25,8 +27,9 @@ angular.module("root").
                         scope.init();                  
                     },function(reject){
                         console.log("err"+JSON.stringify(reject));
-                    });                                    
-                });                
+                    });
+                } 
+                scope.$watch("query",temp);                
                 scope.init=function(){
                     addRow=function(str,rownum){
                         for(var i=0;i<scope.allRows[rownum].length;i++){

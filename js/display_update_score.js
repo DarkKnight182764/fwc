@@ -5,8 +5,10 @@ angular.module("root").
             scope:{
                 query:"=query"                
             },
-            link:function(scope){   
-                scope.$watch("query",function(newVal,oldVal){
+            link:function(scope){ 
+                scope.playername=[];
+                scope.scoreTime=[]; 
+                function temp(newVal,oldVal){
                     //console.log(JSON.stringify(scope.query));  
                     //console.log(typeof(scope.query));
                     $http({
@@ -20,14 +22,25 @@ angular.module("root").
                         scope.init();                  
                     },function(reject){
                         console.log("err"+JSON.stringify(reject));
-                    });                                    
-                });  
-                scope.submit=function(mid){
-                    //console.log(mid);
+                    });
+                } 
+                scope.$watch("query",temp);  
+                scope.submit=function(mid,index){                    
+                    var q="INSERT INTO goal VALUES ("+
+                        mid+
+                        ",("+
+                            "SELECT pid FROM player WHERE pname='"+scope.playername[index]+"'),"+
+                        scope.scoreTime[index]+");";
+                    console.log(q);
                     $http({
                         url:"php/insert.php",
                         method:"POST",
-                        data:JSON.stringify({query:""})
+                        data:JSON.stringify({query:q})
+                    }).then(function(response){
+                        console.log(response.data);
+                        temp(0,0);
+                    },function(reject){
+                        console.log("err"+JSON.stringify(reject));
                     });
                 }              
                 scope.init=function(){
