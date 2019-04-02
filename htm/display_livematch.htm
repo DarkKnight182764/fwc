@@ -1,0 +1,22 @@
+<div class="lv_outer">
+    <ul ng-repeat="row in data" class="lv_ul">
+        <li class="lv_li">
+            <div class="lv_txt" ng-if="row.t1_player!='null'">{{row.t1_player}}</div>
+        </li>                
+        <!--<li>
+            <img src="{{row.t1logo}}" style="height: 50px;width:auto;">
+        </li>                
+        <li>
+            <h4>{{row.t1score+"-"+row.t2score}}</h4>
+        </li>                                
+        <li>
+            <img src="{{row.t2logo}}" style="height: 50px;width:auto;">
+        </li>-->
+        <li class="lv_li">
+            <div class="lv_score">{{row.score_time}}</div>
+        </li>
+        <li class="lv_li">
+            <div class="lv_txt" ng-if="row.t2_player!='null'">{{row.t2_player}}</div>   
+        </li><br>
+    </ul>      
+</div>

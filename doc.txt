@@ -9,3 +9,12 @@ CREATE VIEW fmatch_view AS
             (SELECT stad_name FROM stadium NATURAL JOIN fmatch WHERE mid=fm.mid) as stadium,
             fm.mid
             	FROM fmatch fm
+
+
+CREATE VIEW livematch_view AS 
+    SELECT 
+        mid,pid,t1_id,t2_id,score_time,
+        (SELECT pname FROM player WHERE goal.pid=player.pid AND player.tid=t1_id) AS t1_player,
+        (SELECT pname FROM player WHERE goal.pid=player.pid AND player.tid=t2_id) AS t2_player
+    FROM 
+        fmatch NATURAL JOIN goal;

@@ -7,17 +7,20 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script>
             var app=angular.module("root",[]);
-            app.controller("ctrl",["$scope",function($scope){
+            app.controller("ctrl",["$scope","$interval",function($scope,$interval){
                $scope.getString=function(date){
                    return (date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());
+               }
+               $scope.repeat=function(){
+                    for(var i=0;i<100;i++){
+                        var temp=new Date($scope.date.getTime()+i*$scope.inc);
+                        $scope.dates[i]=$scope.getString(temp);
+                    } 
                }
                $scope.inc=86400000;
                $scope.date=new Date(2019,0,1);  //1st jan 2019
                $scope.dates=[];
-               for(var i=0;i<100;i++){
-                   var temp=new Date($scope.date.getTime()+i*$scope.inc);
-                    $scope.dates[i]=$scope.getString(temp);
-                }
+               $scope.repeat();               
                 //console.log(JSON.stringify($scope.dates));               
                 $scope.updateQuery=function(tempdate){
                     $scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"';";                
@@ -30,7 +33,7 @@
     <body>
         <div ng-app ="root" ng-controller="ctrl">
             <div ng-repeat="tempdate in dates">
-                {{updateQuery(tempdate)}}                                             
+                {{updateQuery(tempdate)}}                                                         
                 <display-query query="query" type="match"></display-query>
             </div>
         </div>

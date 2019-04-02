@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="card" ng-repeat="row in data">
+        <div class="card-header" ng-if="$first">
+            <h3>{{row.start_date}}</h3>
+        </div>
+        <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center;" ng-click="click(row.mid)">        
+            <ul>
+                <li>
+                    <h4>{{row.t1name}}</h4>
+                </li>                
+                <li><img src="{{row.t1logo}}"
+                        style="height: 50px;width:auto;"></li>                
+                <li>
+                    <h4>{{row.t1score+"-"+row.t2score}}</h4>
+                </li>                
+                <li><img src="{{row.t2logo}}"
+                        style="height: 50px;width:auto;"></li>                
+                <li>
+                    <h4>{{row.t2name}}</h4>                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,21 @@
 angular.module("root").
-    directive("displayQuery",["$http",function($http){
+    directive("displayQuery",["$http","$interval",function($http,$interval){
         return {
             templateUrl:function(elem,attr){                  
                 if(attr.type==="players")
-                    return "display.htm";
+                    return "htm/display.htm";
                 else if(attr.type==="match")
-                    return "display_match.htm"                
+                    return "htm/display_match.htm";
+                else if(attr.type==="livematch_static")
+                    return "htm/display_livematch_static.htm";
+                else if(attr.type==="livematch_dynamic")
+                    return "htm/display_livematch.htm";
             },
             scope:{
-                query:"=query"                
+                query:"=query",
+                refresh:"=refresh"          
             },
-            link:function(scope){   
+            link:function(scope,elem,attrs){                   
                 console.log("link");
                 function temp(newVal,oldVal){
                     console.log("http");
@@ -29,7 +34,9 @@ angular.module("root").
                         console.log("err"+JSON.stringify(reject));
                     });
                 } 
-                scope.$watch("query",temp);                
+                scope.$watch("query",function(newVal,oldVal){
+                    temp(newVal,oldVal);
+                });                                
                 scope.init=function(){
                     addRow=function(str,rownum){
                         for(var i=0;i<scope.allRows[rownum].length;i++){
@@ -51,7 +58,32 @@ angular.module("root").
                     str+="]";
                     console.log(str);
                     scope.data=JSON.parse(str);                    
+                }
+                if(attrs.type==="match"){
+                    scope.click=function(mid){
+                        console.log(mid);
+                        window.location.assign("livematch.php?mid="+mid);
+                    }
                 }   
+                else if(attrs.type==="livematch_dynamic"){
+                    scope.data=[];
+                    var prev=scope.data.slice();
+                    $interval(function(){
+                        if(prev.length!=scope.data.length){
+                            scope.refresh=true;                            
+                        }
+                        prev=scope.data.slice();
+                        console.log("refresh");                        
+                        temp(0,0);                        
+                    },1000);
+                }          
+                else if(attrs.type==="livematch_static"){
+                    scope.$watch("refresh",function(newVal,oldVal){
+                        console.log("static refresh");
+                        temp(0,0);
+                        scope.refresh=false;
+                    })
+                }    
             }
         }
     }]);

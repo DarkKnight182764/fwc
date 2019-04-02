@@ -1,7 +1,7 @@
 angular.module("root").
     directive("displayTeam",["$http",function($http){
         return {
-            templateUrl:"display_team.htm",
+            templateUrl:"htm/display_team.htm",
             scope:{
                 tablename:"=tablename",                
                 teamname:"="

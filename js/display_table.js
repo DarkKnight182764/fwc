@@ -1,7 +1,10 @@
 angular.module("root").
     directive("displayTable",["$http",function($http){
         return {
-            templateUrl:"display.htm",
+            templateUrl:function(elem,attr){                
+                if(attr.type==="players")
+                    return "htm/display.htm";
+            },
             scope:{
                 tablename:"=tablename",                
             },

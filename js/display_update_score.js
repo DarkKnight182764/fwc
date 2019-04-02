@@ -1,7 +1,7 @@
 angular.module("root").
     directive("displayUpdateScore",["$http",function($http){
         return {
-            templateUrl:"display_update_score.htm",
+            templateUrl:"htm/display_update_score.htm",
             scope:{
                 query:"=query"                
             },

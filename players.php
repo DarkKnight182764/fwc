@@ -18,6 +18,6 @@
             if(COUNT($_SESSION)!=0)
                 echo "current-user:".$_SESSION['username'];
         ?>        
-        <display-table tablename="'players_view'"></display-table>              
+        <display-table tablename="'players_view'" type="players"></display-table>              
     </body>
 </html> 
