@@ -10,6 +10,8 @@ angular.module("root").
                     return "htm/display_livematch_static.htm";
                 else if(attr.type==="livematch_dynamic")
                     return "htm/display_livematch.htm";
+                else if(attr.type==="teamviewer_match")
+                    return "htm/teamviewer_match.htm";
             },
             scope:{
                 query:"=query",
@@ -59,7 +61,7 @@ angular.module("root").
                     console.log(str);
                     scope.data=JSON.parse(str);                    
                 }
-                if(attrs.type==="match"){
+                if(attrs.type==="match" || attrs.type==="teamviewer_match"){
                     scope.click=function(mid){
                         console.log(mid);
                         window.location.assign("livematch.php?mid="+mid);

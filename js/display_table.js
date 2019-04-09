@@ -4,11 +4,13 @@ angular.module("root").
             templateUrl:function(elem,attr){                
                 if(attr.type==="players")
                     return "htm/display.htm";
+                else if(attr.type==="teams")
+                    return "htm/display_team.htm"
             },
             scope:{
                 tablename:"=tablename",                
             },
-            link:function(scope){                            
+            link:function(scope,elem,attr){                            
                 $http({
                     url:"php/display.php",
                     method:"POST",
@@ -41,6 +43,13 @@ angular.module("root").
                     str+="]";
                     console.log(str);
                     scope.data=JSON.parse(str);                    
+                }
+                if(attr.type==="teams"){
+                    scope.click=function(index){
+                        console.log(index);
+                        window.location.assign("teamviewer.php?tid="+scope.data[index].tid+
+                        "&"+"tname="+scope.data[index].tname);
+                    }
                 }
             }
         }

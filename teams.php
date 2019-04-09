@@ -15,24 +15,16 @@
     <link rel="stylesheet" type="text/css" href="css/teams.css">
     <script>
         var app=angular.module("root",[]);
-        app.controller("ctrl",["$scope",function($scope){
-            $scope.query=$scope.teamname="";                                    
-            $scope.$watch("teamname",function(newVal,oldVal){
-                if($scope.teamname!=="")
-                    $scope.query="SELECT * FROM players_view WHERE tname='"+$scope.teamname+"'";
-            });         
+        app.controller("ctrl",["$scope",function($scope){                                        
         }])
     </script>        
-    <script src="js/display_team.js"></script>
-    <script src="js/display_query.js"></script>    
+    <script src="js/display_table.js"></script>    
 </head>
 <?php    
     if(COUNT($_SESSION)!=0)
         echo "current-user:".$_SESSION['username']."<br>";
 ?>
-<body ng-app="root" ng-controller="ctrl">            
-    {{query}}
-    <display-team tablename="'team'" teamname="teamname"></display-team>   
-    <display-query query="query" type="players"></display-query>    
+<body ng-app="root" ng-controller="ctrl">                    
+    <display-table tablename="'team'" type="teams"></display-table>
 </body>
 </html>
