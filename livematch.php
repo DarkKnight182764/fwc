@@ -18,18 +18,26 @@
     <script src="js/display_query.js"></script>
     <link rel="stylesheet" href="css/matches.css">
     <style>
-        .lv_ul{
-            text-align:center;
-            margin:0px;
-            font-size:15px;
+        .lv_col_t1{
+            text-align:right;            
         }
-        .lv_li{            
-            margin:0px;
+        .lv_col_t2{
+            text-align:left;            
         }
-    </style>
+        .lv_col_score{
+            text-align:center; 
+            font-weight:bold;
+        }
+        .lv_col_t1,.lv_col_t2,.lv_col_score{
+            border-bottom:1px solid black;
+        }
+        .lv_outer{
+            font-style:italic;
+        }
+    </style>    
 </head>
 <body>            
-    <div ng-app="root" ng-controller="ctrl">
+    <div ng-app="root" ng-controller="ctrl" class="container">
         <display-query type="livematch_static" refresh="refresh" query="query1"></display-query>
         <display-query type="livematch_dynamic" refresh="refresh" query="query2"></display-query>        
     </div>

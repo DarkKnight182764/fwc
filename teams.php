@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if(COUNT($_SESSION)==0)
+        header("location:"."index.html");        
+?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>        
@@ -19,12 +24,11 @@
         }])
     </script>        
     <script src="js/display_team.js"></script>
-    <script src="js/display_query.js"></script>
+    <script src="js/display_query.js"></script>    
 </head>
-<?php
-    session_start();
+<?php    
     if(COUNT($_SESSION)!=0)
-            echo "current-user:".$_SESSION['username']."<br>";
+        echo "current-user:".$_SESSION['username']."<br>";
 ?>
 <body ng-app="root" ng-controller="ctrl">            
     {{query}}
