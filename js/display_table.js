@@ -5,7 +5,7 @@ angular.module("root").
                 if(attr.type==="players")
                     return "htm/display.htm";
                 else if(attr.type==="teams")
-                    return "htm/display_team.htm"
+                    return "htm/display_team.htm"                
             },
             scope:{
                 tablename:"=tablename",                

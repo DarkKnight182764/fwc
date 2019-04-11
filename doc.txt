@@ -7,7 +7,10 @@ CREATE VIEW fmatch_view AS
             (SELECT COUNT(*) FROM goal NATURAL JOIN fmatch WHERE mid=fm.mid AND EXISTS(SELECT * FROM team NATURAL JOIN player WHERE tid=fm.t2_id AND pid=goal.pid)) AS t2score,
             fm.start_date,
             (SELECT stad_name FROM stadium NATURAL JOIN fmatch WHERE mid=fm.mid) as stadium,
-            fm.mid
+            fm.mid,
+            (SELECT tcolor FROM team WHERE team.tid=fm.t1_id) AS 't1color',
+            (SELECT tcolor FROM team WHERE team.tid=fm.t2_id) AS 't2color',
+            (SELECT stad_loc FROM stadium NATURAL JOIN fmatch WHERE mid=fm.mid) as stad_loc
             	FROM fmatch fm
 
 

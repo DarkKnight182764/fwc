@@ -1,30 +1,33 @@
-<?php
-    session_start();
-    if(COUNT($_SESSION)==0)
-        header("location:"."index.html");        
-?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">  
 <head>        
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/tablestyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
     <link rel="stylesheet" type="text/css" href="css/players.css">
     <link rel="stylesheet" type="text/css" href="css/teams.css">
     <script>
         var app=angular.module("root",[]);
-        app.controller("ctrl",["$scope",function($scope){                                        
+        app.controller("ctrl",["$scope",function($scope){ 
+            $scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";                                       
         }])
     </script>        
     <script src="js/display_table.js"></script>    
+    <script src="js/navbar.js"></script>
 </head>
-<?php    
-    if(COUNT($_SESSION)!=0)
-        echo "current-user:".$_SESSION['username']."<br>";
-?>
-<body ng-app="root" ng-controller="ctrl">                    
+<body ng-app="root" ng-controller="ctrl">  
+    <navbar active="#teams" username="username"></navbar>                  
     <display-table tablename="'team'" type="teams"></display-table>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<div class="container">
+        <div class="card" ng-repeat="row in data" ng-mouseover="show=true" ng-mouseleave="show=false">            
+            <div class="card-header" ng-if="$first">
+                <h3>{{row.start_date}}</h3>
+            </div>
+            <div style="text-align:center;"> 
+                <input type="button" ng-hide="!show" ng-click="click(row.stadium)" class="book" value="Book tickets to this match">                                    
+            </div>
+            <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center; background-image:
+            linear-gradient(to right,{{row.t1color}},{{row.t2color}});">                        
+                <ul>                
+                    <li>
+                        <h4>{{row.t1name}}</h4>
+                    </li>                
+                    <li><img src="{{row.t1logo}}"
+                            style="height: 50px;width:auto;"></li>                
+                    <li>
+                        <h4>{{row.t1score+"-"+row.t2score}}</h4>
+                    </li>                
+                    <li><img src="{{row.t2logo}}"
+                            style="height: 50px;width:auto;"></li>                
+                    <li>
+                        <h4>{{row.t2name}}</h4>                    
+                    </li>
+                </ul>            
+                <ul  style="margin:0px;">
+                    <li>
+                        <h6>{{row.stadium}}</h6>
+                        <h6>{{row.stadium_location}}</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

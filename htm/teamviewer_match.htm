@@ -1,6 +1,6 @@
 <div class="container">
         <div class="card" ng-repeat="row in data">            
-            <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center;" ng-click="click(row.mid)">        
+            <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center; background-image: linear-gradient(to right,{{row.t1color}},{{row.t2color}});" ng-click="click(row.mid)">        
                 <ul>
                     <li>
                         <h4>{{row.t1name}}</h4>

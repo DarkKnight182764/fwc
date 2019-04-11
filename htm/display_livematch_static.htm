@@ -3,7 +3,7 @@
         <div class="card-header" ng-if="$first">
             <h3>{{row.start_date}}</h3>
         </div>
-        <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center;" ng-click="click(row.mid)">        
+        <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center; background-image: linear-gradient(to right,{{row.t1color}},{{row.t2color}});" ng-click="click(row.mid)">        
             <ul>
                 <li>
                     <h4>{{row.t1name}}</h4>

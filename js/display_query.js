@@ -4,14 +4,27 @@ angular.module("root").
             templateUrl:function(elem,attr){                  
                 if(attr.type==="players")
                     return "htm/display.htm";
+
                 else if(attr.type==="match")
                     return "htm/display_match.htm";
+
                 else if(attr.type==="livematch_static")
                     return "htm/display_livematch_static.htm";
+
                 else if(attr.type==="livematch_dynamic")
                     return "htm/display_livematch.htm";
+
                 else if(attr.type==="teamviewer_match")
-                    return "htm/teamviewer_match.htm";
+                    return "htm/teamviewer_match.htm";                    
+                
+                else if(attr.type==="ticketing_select")
+                    return "htm/ticketing_select.htm";   
+                
+                else if(attr.type==="stadium")
+                    return "htm/display_stadium.htm";
+
+                else if(attr.type==="team-header")
+                    return "htm/team_header.htm"
             },
             scope:{
                 query:"=query",
@@ -85,6 +98,12 @@ angular.module("root").
                         temp(0,0);
                         scope.refresh=false;
                     })
+                }
+                else if(attrs.type==="ticketing_select"){
+                    scope.click=function(stad){
+                        console.log(stad);
+                        window.location.assign("ticketing.php?stadium="+stad);
+                    }
                 }    
             }
         }
