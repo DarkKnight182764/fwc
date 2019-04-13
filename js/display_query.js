@@ -99,12 +99,15 @@ angular.module("root").
                         scope.refresh=false;
                     })
                 }
-                else if(attrs.type==="ticketing_select"){
-                    scope.click=function(stad){
-                        console.log(stad);
-                        window.location.assign("ticketing.php?stadium="+stad);
-                    }
+                else if(attrs.type==="ticketing_select"){                    
+                    scope.click=function(stad,startDate){                        
+                        window.location.assign("ticketing.php?stadium="+stad+"&start_date="+startDate);
+                    }                    
                 }    
+                scope.set=function(startDate){
+                    scope.tempD=startDate;                    
+                    return startDate;
+                }
             }
         }
     }]);

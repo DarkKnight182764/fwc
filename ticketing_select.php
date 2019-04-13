@@ -31,6 +31,8 @@
                $scope.date=new Date(2019,0,1);  //1st jan 2019
                $scope.dates=[];
                $scope.repeat();               
+               //$scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"' ORDER BY start_date;";
+               $scope.query="SELECT * FROM `fmatch_view` WHERE start_date >CURDATE() ORDER BY start_date";
                 //console.log(JSON.stringify($scope.dates));               
                 $scope.updateQuery=function(tempdate){
                     $scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"';";                
@@ -58,10 +60,14 @@
     <body>
         <div ng-app ="root" ng-controller="ctrl">
             <navbar active="#ticketing" username="username"></navbar>
-            <div ng-repeat="tempdate in dates">
+            <!--<div ng-repeat="tempdate in dates">
                 {{updateQuery(tempdate)}}                                                         
                 <display-query query="query" type="ticketing_select"></display-query>
-            </div>
+            </div>-->
+            <div class="container" style="margin-top:3em;margin-bottom:3em">
+                <h1 class="display-4" style="border-bottom: 1px solid black;padding:0.4em;">Upcoming Matches</h1>
+            </div>                                                                                
+            <display-query query="query" type="ticketing_select"></display-query>
         </div>
     </body>
 </html>

@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.card-img-top {
+    border-radius: 0;
+}
+
+.border-gradient {
+    border-image-slice: 1;
+    border-width: 5px;
+}
+
+.border-gradient-gold {
+    border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
+}
+
+.team-logo {
+    position: absolute;
+    transform: translate(27px, 125px);
+}
+
+.container-fluid {            
+    padding: 3em;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+.btn{
+    border-radius:0;
+}

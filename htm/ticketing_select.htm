@@ -1,16 +1,21 @@
 <div class="container">
+        {{tempD=" "}}
         <div class="card" ng-repeat="row in data" ng-mouseover="show=true" ng-mouseleave="show=false">            
-            <div class="card-header" ng-if="$first">
+            <!--<div class="card-header" ng-if="$first">
                 <h3>{{row.start_date}}</h3>
-            </div>
+            </div>-->            
+            <div class="card-header" ng-if="tempD!==row.start_date">
+                <h3>{{set(row.start_date)}}</h3>
+            </div>               
             <div style="text-align:center;"> 
-                <input type="button" ng-hide="!show" ng-click="click(row.stadium)" class="book" value="Book tickets to this match">                                    
+                
+                <input type="button" ng-hide="!show" ng-click="click(row.stadium,row.start_date)" class="book" value="Book tickets to {{row.stadium}}">                                    
             </div>
             <div class="card-body matdet" style="border-bottom: 1px solid #eee;text-align: center; background-image:
             linear-gradient(to right,{{row.t1color}},{{row.t2color}});">                        
-                <ul>                
+                <ul>                                     
                     <li>
-                        <h4>{{row.t1name}}</h4>
+                        <h4>{{row.t1name}}</h4>                        
                     </li>                
                     <li><img src="{{row.t1logo}}"
                             style="height: 50px;width:auto;"></li>                

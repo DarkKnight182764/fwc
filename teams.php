@@ -27,7 +27,10 @@
     <script src="js/navbar.js"></script>
 </head>
 <body ng-app="root" ng-controller="ctrl">  
-    <navbar active="#teams" username="username"></navbar>                  
+    <navbar active="#teams" username="username"></navbar>  
+    <div class="container" style="margin-top:3em;margin-bottom:3em">
+        <h1 class="display-4" style="border-bottom: 1px solid black;padding:0.4em;">All Teams</h1>
+    </div>                
     <display-table tablename="'team'" type="teams"></display-table>
 </body>
 </html>

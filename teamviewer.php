@@ -46,16 +46,6 @@
             border-image-slice: 1;
             border-width: 5px;
         }
-
-        .border-gradient-gold {
-            border-image: linear-gradient(to bottom, #AFB673, #E5E9C4);
-        }
-
-        .team-logo {
-            position: absolute;
-            transform: translate(27px, 125px);
-        }
-
         .container-fluid {            
             padding: 3em;
             text-align: center;
@@ -66,13 +56,14 @@
         }
         .btn{
             border-radius:0;
-        }
+        }        
     </style>
 </head>
 <body ng-app="root" ng-controller="ctrl"> 
     <navbar active="#teams" username="username"></navbar> 
     
     <display-query type="team-header" query="headerQuery"></display-query>
+
     <!--Players-->    
     <div class="container" style="margin-top:3em;margin-bottom:3em">
         <h1 class="display-4" style="border-bottom: 1px solid black;padding:0.4em;">Players</h1>
@@ -89,6 +80,7 @@
         </div>
     </div>  
     <display-query type="players" query="playerQuery"></display-query>
+
     <!--Matches-->
     <div class="container" style="margin-top:3em;margin-bottom:3em">
         <h1 class="display-4" style="border-bottom: 1px solid black;padding:0.4em;">Matches</h1>

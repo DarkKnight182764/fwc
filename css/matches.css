@@ -10,7 +10,7 @@ li {
     display: inline-block;
     
 }
-.matdet img{
+.matdet .match_team_logo{
     margin-right: 5px;
     margin-left: 5px;
 }
