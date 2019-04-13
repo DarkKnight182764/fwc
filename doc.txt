@@ -21,3 +21,7 @@ CREATE VIEW livematch_view AS
         (SELECT pname FROM player WHERE goal.pid=player.pid AND player.tid=t2_id) AS t2_player
     FROM 
         fmatch NATURAL JOIN goal;
+
+
+000 dbuser:id9282311_harshit
+000 dbname:id9282311_fwc

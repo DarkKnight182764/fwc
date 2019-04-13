@@ -28,6 +28,7 @@ angular.module("root").
                             }).then(function(response){
                                 console.log(response.data);
                                 //console.log(JSON.stringify(response));                            
+                                console.log(response.data);
                                 var temp=JSON.parse(response.data);
                                 if(temp){
                                     console.log("Inserted");
@@ -47,9 +48,10 @@ angular.module("root").
                             method:"POST",
                             data:JSON.stringify({username:scope.eAUsername,password:scope.eAPassword})                         
                         }).then(function(response){   
+                            console.log(response.data);
                             var temp=JSON.parse(response.data);
                             if(temp){
-                                //console.log(response.data);
+                                console.log(response.data);
                                 scope.res=true;                            
                                 window.location.assign(window.location.href);                        
                             }

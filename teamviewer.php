@@ -27,7 +27,7 @@
         app.controller("ctrl",["$scope",function($scope){
             $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
             $scope.playerQuery="SELECT * FROM players_view WHERE tname='"+tname+"';";
-            $scope.matchQuery="SELECT * FROM fmatch_view WHERE t1name='"+tname+"' OR t2name='"+tname+"';";
+            $scope.matchQuery="SELECT * FROM fmatch_view WHERE t1name='"+tname+"' OR t2name='"+tname+"'; ORDER BY start_date";
             $scope.headerQuery="SELECT * FROM team WHERE tid="+tid+";";
             $scope.update=function(type){
                 $scope.playerQuery="SELECT * FROM players_view WHERE type='"+type+"' AND tname='"+tname+"';";
