@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>    
@@ -21,6 +24,7 @@
                 echo $_GET["mid"];?>;            
             $scope.query1="SELECT * FROM fmatch_view WHERE mid="+$scope.mid+";";
             $scope.query2="SELECT * FROM livematch_view WHERE mid="+$scope.mid+";";
+            $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
             $scope.refresh=false;
         }]);
     </script>
@@ -48,7 +52,7 @@
 </head>
 <body>            
     <div ng-app="root" ng-controller="ctrl" class="container">
-        <navbar active="#matches"></navbar>
+        <navbar active="#matches" username="username"></navbar>
         <display-query type="livematch_static" refresh="refresh" query="query1"></display-query>
         <display-query type="livematch_dynamic" refresh="refresh" query="query2"></display-query>        
     </div>

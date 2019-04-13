@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +27,7 @@
 	app.controller("ctrl",["$scope",function($scope){
 		$scope.stadiumQuery="SELECT * FROM stad_seats WHERE stad_name='"+"<?php echo $_GET["stadium"]?>"+"';";
 		$scope.nums=[0,0,0,0];
-		$scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
+		$scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
 		$scope.update=function(index,val){
 			if(val==-1){
 				if($scope.nums[index]>0)

@@ -41,7 +41,7 @@ angular.module("root").
                         method:"POST",
                         data:JSON.stringify({query:scope.query})
                     }).then(function(response){     
-                        //console.log(JSON.stringify(response.data));                                                      
+                        console.log(JSON.stringify(response.data));                                                      
                         scope.allRows=response.data.allRows;                                               
                         scope.header=response.data.fields;   
                         scope.init();                  

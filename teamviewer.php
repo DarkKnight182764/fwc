@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +25,7 @@
         console.log(tname);
         var app=angular.module("root",[]);
         app.controller("ctrl",["$scope",function($scope){
-            $scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
+            $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
             $scope.playerQuery="SELECT * FROM players_view WHERE tname='"+tname+"';";
             $scope.matchQuery="SELECT * FROM fmatch_view WHERE t1name='"+tname+"' OR t2name='"+tname+"';";
             $scope.headerQuery="SELECT * FROM team WHERE tid="+tid+";";

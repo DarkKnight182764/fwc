@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +26,8 @@
         var loginApp=angular.module("root",[]);
         loginApp.controller("loginController",function($scope,$http){
             $scope.showCa=false;            
-            $scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";        
-            
-        });
+            $scope.username="<?php ;if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>"; 
+        });        
     </script>
     <script src="js/navbar.js"></script>
     <style>

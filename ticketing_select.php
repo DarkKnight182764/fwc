@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +20,7 @@
         <script>
             var app=angular.module("root",[]);
             app.controller("ctrl",["$scope","$interval",function($scope,$interval){
-                $scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
+                $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
                $scope.getString=function(date){
                    return (date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());
                }

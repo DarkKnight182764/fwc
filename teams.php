@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">  
@@ -20,7 +23,7 @@
     <script>
         var app=angular.module("root",[]);
         app.controller("ctrl",["$scope",function($scope){ 
-            $scope.username="<?php session_start();if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";                                       
+            $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";                                       
         }])
     </script>        
     <script src="js/display_table.js"></script>    
