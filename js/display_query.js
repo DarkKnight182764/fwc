@@ -25,6 +25,9 @@ angular.module("root").
 
                 else if(attr.type==="team-header")
                     return "htm/team_header.htm"
+                
+                else if(attr.type==="ticketing_confirm")
+                    return "htm/ticketing_confirm.htm";
             },
             scope:{
                 query:"=query",
@@ -34,7 +37,7 @@ angular.module("root").
                 console.log("link");
                 function temp(newVal,oldVal){
                     console.log("http");
-                    //console.log(JSON.stringify(scope.query));  
+                    console.log(JSON.stringify(scope.query));  
                     //console.log(typeof(scope.query));
                     $http({
                         url:"php/display_query.php",
@@ -43,10 +46,13 @@ angular.module("root").
                     }).then(function(response){     
                         console.log(JSON.stringify(response.data));                                                      
                         scope.allRows=response.data.allRows;                                               
-                        scope.header=response.data.fields;   
+                        scope.header=response.data.fields;
+                        scope.confirm=true;   
                         scope.init();                  
                     },function(reject){
                         console.log("err"+JSON.stringify(reject));
+                        scope.confirm=false;   
+                        alert("There was an error");
                     });
                 } 
                 scope.$watch("query",function(newVal,oldVal){
@@ -100,8 +106,8 @@ angular.module("root").
                     })
                 }
                 else if(attrs.type==="ticketing_select"){                    
-                    scope.click=function(stad,startDate){                        
-                        window.location.assign("ticketing.php?stadium="+stad+"&start_date="+startDate);
+                    scope.click=function(mid){                        
+                        window.location.assign("ticketing.php?mid="+mid);
                     }                    
                 }    
                 scope.set=function(startDate){

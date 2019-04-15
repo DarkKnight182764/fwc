@@ -40,6 +40,9 @@
         <script src="js/display_update_score.js"></script>
         <script src="js/navbar.js"></script>
         <link rel="stylesheet" href="css/matches.css">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />      
+        <link rel="stylesheet" href="css/navbar.css">
     </head> 
     <body>        
         <div ng-app="root" ng-controller="ctrl">

@@ -19,6 +19,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>         
         <link rel="stylesheet" type="text/css" href="css/players.css">
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />      
+        <link rel="stylesheet" href="css/navbar.css">
         <script>            
             var app=angular.module("root",[]);
             app.controller("ctrl",["$scope",function($scope){

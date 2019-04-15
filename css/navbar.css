@@ -1,0 +1,25 @@
+.upar {
+    color: #fff;
+}
+
+.content {
+    padding: 2em;
+}
+
+
+.upar ul {
+    list-style: none;
+    margin-top: 2em;
+}
+
+.upar li {
+    display: inline-block;
+    margin-right: 2em;
+    text-transform: uppercase;
+
+}
+
+.upar a {
+    color: #fff;
+    text-decoration: none;
+}

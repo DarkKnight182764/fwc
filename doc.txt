@@ -22,6 +22,9 @@ CREATE VIEW livematch_view AS
     FROM 
         fmatch NATURAL JOIN goal;
 
+CREATE TRIGGER log_update BEFORE INSERT ON user FOR EACH ROW BEGIN INSERT INTO log(name,access_date) VALUES (new.username,CURDATE()); END;$$
+
+
 
 000 dbuser:id9282311_harshit
 000 dbname:id9282311_fwc

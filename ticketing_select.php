@@ -20,20 +20,8 @@
         <script>
             var app=angular.module("root",[]);
             app.controller("ctrl",["$scope","$interval",function($scope,$interval){
-                $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
-               $scope.getString=function(date){
-                   return (date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());
-               }
-               $scope.repeat=function(){
-                    for(var i=0;i<100;i++){
-                        var temp=new Date($scope.date.getTime()+i*$scope.inc);
-                        $scope.dates[i]=$scope.getString(temp);
-                    } 
-               }
-               $scope.inc=86400000;
-               $scope.date=new Date(2019,0,1);  //1st jan 2019
-               $scope.dates=[];
-               $scope.repeat();               
+               $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
+               $scope.dates=[];                        
                //$scope.query="SELECT * FROM fmatch_view WHERE start_date='"+tempdate+"' ORDER BY start_date;";
                $scope.query="SELECT * FROM `fmatch_view` WHERE start_date >CURDATE() ORDER BY start_date";
                 //console.log(JSON.stringify($scope.dates));               
@@ -45,6 +33,9 @@
         <script src="js/display_query.js"></script>
         <link rel="stylesheet" href="css/matches.css">
         <script src="js/navbar.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />      
+        <link rel="stylesheet" href="css/navbar.css">
         <style>
             .book{
                 width:80%;
@@ -63,6 +54,10 @@
     <body>
         <div ng-app ="root" ng-controller="ctrl">
             <navbar active="#ticketing" username="username"></navbar>
+            <?php
+                if(count($_SESSION)==0)
+                    die("please login to view this page");
+            ?>
             <!--<div ng-repeat="tempdate in dates">
                 {{updateQuery(tempdate)}}                                                         
                 <display-query query="query" type="ticketing_select"></display-query>

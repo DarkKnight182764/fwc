@@ -19,7 +19,7 @@ angular.module("root").
                 scope.submit=function(createAcc){                
                     if(createAcc){
                         console.log("Creating new account");
-                        if(scope.cAPassword==scope.cARepeatPassword){
+                        if(scope.cAPassword==scope.cARepeatPassword && scope.cAPassword.length>=4 && scope.cAUsername.length>=4){
                             $http({  
                                 url:"php/insert.php",
                                 method:"POST",
@@ -62,6 +62,7 @@ angular.module("root").
                     }
                 }
                 scope.logOut=function(){
+                    console.log("logging out");
                     $http({  
                         url:"php/logout.php",                                                
                     }).then(function(response){

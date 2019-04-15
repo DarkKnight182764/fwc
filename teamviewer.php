@@ -18,7 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>    
     <link rel="stylesheet" type="text/css" href="css/players.css">
-    <link rel="stylesheet" type="text/css" href="css/matches.css">
+    <link rel="stylesheet" type="text/css" href="css/matches.css">    
     <script>
         var tid=<?php echo $_GET["tid"];?>;
         var tname="<?php echo $_GET["tname"];?>";
@@ -28,14 +28,14 @@
             $scope.username="<?php if(COUNT($_SESSION)!=0)echo $_SESSION['username'];?>";
             $scope.playerQuery="SELECT * FROM players_view WHERE tname='"+tname+"';";
             $scope.matchQuery="SELECT * FROM fmatch_view WHERE t1name='"+tname+"' OR t2name='"+tname+"'; ORDER BY start_date";
-            $scope.headerQuery="SELECT * FROM team WHERE tid="+tid+";";
-            $scope.update=function(type){
-                $scope.playerQuery="SELECT * FROM players_view WHERE type='"+type+"' AND tname='"+tname+"';";
-            }
+            $scope.headerQuery="SELECT * FROM team WHERE tid="+tid+";";            
         }]);        
     </script>
     <script src="js/display_query.js"></script>    
     <script src="js/navbar.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />      
+    <link rel="stylesheet" href="css/navbar.css">
     <style>
         * {
             box-sizing: border-box;
@@ -49,9 +49,9 @@
             border-image-slice: 1;
             border-width: 5px;
         }
-        .container-fluid {            
-            padding: 3em;
+        .header{
             text-align: center;
+            padding:3em;
         }
 
         .inline {
